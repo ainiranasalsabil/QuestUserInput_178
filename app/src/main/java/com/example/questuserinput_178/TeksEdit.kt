@@ -3,12 +3,14 @@ package com.example.questuserinput_178
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.material3.*
+import androidx.compose.material3.HorizontalDivider as Divider
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-
+import androidx.compose.ui.graphics.Color
 
 @Composable
 fun FormDataDiri(modifier: Modifier){
@@ -61,6 +63,18 @@ fun FormDataDiri(modifier: Modifier){
                 }
             }
         }
+
+        OutlinedTextField(
+            value = textAlamat,
+            singleLine = true,
+            modifier = Modifier.width(250.dp),
+            label = { Text(text = "Alamat Lengkap") },
+            onValueChange = {
+                textAlamat = it
+            }
+        )
+
+
 
 
     }

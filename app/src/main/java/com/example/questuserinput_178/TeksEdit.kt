@@ -13,19 +13,19 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.graphics.Color
 
 @Composable
-fun FormDataDiri(modifier: Modifier){
+fun FormDataDiri(modifier: Modifier) {
     //Variabel untuk mengingat nilai masukan dari keyboard
 
-    var textNama by remember {mutableStateOf("")}
-    var textAlamat by remember {mutableStateOf("")}
-    var textJK by remember {mutableStateOf("")}
+    var textNama by remember { mutableStateOf("") }
+    var textAlamat by remember { mutableStateOf("") }
+    var textJK by remember { mutableStateOf("") }
 
     //variabel untuk menyimpan data yang diperoleh dari kompenen UI
-    var nama by remember {mutableStateOf("")}
-    var alamat by remember {mutableStateOf("")}
-    var jenis by remember {mutableStateOf("")}
+    var nama by remember { mutableStateOf("") }
+    var alamat by remember { mutableStateOf("") }
+    var jenis by remember { mutableStateOf("") }
 
-    val gender:List<String> = listOf("Laki-laki", "Perempuan")
+    val gender: List<String> = listOf("Laki-laki", "Perempuan")
 
     Column(
         modifier = Modifier
@@ -40,11 +40,12 @@ fun FormDataDiri(modifier: Modifier){
             shape = MaterialTheme.shapes.large,
             modifier = Modifier.width(250.dp),
             label = { Text(text = "Nama Lengkap") },
-            onValueChange = { textNama = it
+            onValueChange = {
+                textNama = it
             }
         )
 
-        Row{
+        Row {
             gender.forEach { item ->
                 Row(
                     modifier = Modifier.selectable(
@@ -104,5 +105,32 @@ fun FormDataDiri(modifier: Modifier){
             thickness = dimensionResource(R.dimen.padding_tipis),
             color = Color.DarkGray
         )
+
+        OutlinedTextField(
+            value = textAlamat,
+            singleLine = true,
+            modifier = Modifier.width(250.dp),
+
+            onValueChange = {
+                textAlamat = it
+            }
+        )
+
+        Divider(
+            modifier = Modifier.padding(
+                bottom = dimensionResource(R.dimen.padding_medium),
+                top = dimensionResource(id = R.dimen.padding_medium)
+            ),
+            thickness = dimensionResource(R.dimen.padding_tipis),
+            color = Color.DarkGray
+        )
+        ElevatedCard(
+            elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
+            colors = CardDefaults.cardColors(containerColor = Color.Black),
+            modifier = Modifier
+                .height(100.dp)
+                .width(300.dp)
+        )
+        }
     }
 }

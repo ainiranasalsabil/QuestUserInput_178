@@ -38,7 +38,9 @@ fun FormDataDiri(modifier: Modifier
 
             label = {Text(text = "Nama Lengkap")},
 
-
+            onValueChange = {
+                textNama = it
+            }
         )
 
         Row {

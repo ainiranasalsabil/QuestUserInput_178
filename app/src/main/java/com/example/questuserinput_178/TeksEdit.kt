@@ -13,19 +13,19 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.graphics.Color
 
 @Composable
-fun FormDataDiri(modifier: Modifier) {
+fun FormDataDiri(modifier: Modifier){
     //Variabel untuk mengingat nilai masukan dari keyboard
 
-    var textNama by remember { mutableStateOf("") }
-    var textAlamat by remember { mutableStateOf("") }
-    var textJK by remember { mutableStateOf("") }
+    var textNama by remember {mutableStateOf("")}
+    var textAlamat by remember {mutableStateOf("")}
+    var textJK by remember {mutableStateOf("")}
 
     //variabel untuk menyimpan data yang diperoleh dari kompenen UI
-    var nama by remember { mutableStateOf("") }
-    var alamat by remember { mutableStateOf("") }
-    var jenis by remember { mutableStateOf("") }
+    var nama by remember {mutableStateOf("")}
+    var alamat by remember {mutableStateOf("")}
+    var jenis by remember {mutableStateOf("")}
 
-    val gender: List<String> = listOf("Laki-laki", "Perempuan")
+    val gender:List<String> = listOf("Laki-laki", "Perempuan")
 
     Column(
         modifier = Modifier
@@ -130,7 +130,12 @@ fun FormDataDiri(modifier: Modifier) {
             modifier = Modifier
                 .height(100.dp)
                 .width(300.dp)
-        )
+        ) {
+            Column(modifier = Modifier.padding(horizontal = 5.dp, vertical = 15.dp)) {
+                Text(text = "Nama    : $nama", color = Color.White)
+                Text(text = "Gender  : $jenis", color = Color.White)
+                Text(text = "Alamat  : $alamat", color = Color.White)
+            }
         }
     }
-}
+    }

@@ -77,5 +77,5 @@ fun FormPendaftaranDataDiri(modifier: Modifier = Modifier) {
                 label = { Text("Nama Lengkap") },
                 onValueChange = { textNama = it }
             )
-
+            Text("Jenis Kelamin", fontWeight = FontWeight.SemiBold)
 }

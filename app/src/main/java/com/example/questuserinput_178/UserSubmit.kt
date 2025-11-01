@@ -12,6 +12,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.selection.selectable
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.MaterialTheme
@@ -126,6 +128,14 @@ fun FormPendaftaranDataDiri(modifier: Modifier = Modifier) {
                 modifier = Modifier.fillMaxWidth(),
                 label = { Text("Alamat Lengkap") },
                 onValueChange = { textAlamat = it }
+            )
+            Button(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(dimensionResource(R.dimen.tinggi_tombol)),
+                enabled = textNama.isNotEmpty() && textAlamat.isNotEmpty(),
+                onClick = {},
+                colors = ButtonDefaults.buttonColors(containerColor = Color.Blue)
             )
 
 }

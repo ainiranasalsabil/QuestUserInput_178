@@ -100,4 +100,8 @@ fun FormPendaftaranDataDiri(modifier: Modifier = Modifier) {
                     }
                 }
             }
+            Text("Status", fontWeight = FontWeight.SemiBold)
+
+            }
+
 }

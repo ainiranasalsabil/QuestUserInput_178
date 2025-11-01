@@ -23,7 +23,11 @@ fun FormPendaftaranDataDiri(modifier: Modifier = Modifier) {
     val gender = listOf("Laki-laki", "Perempuan")
     val status = listOf("Janda", "Lajang", "Duda")
     Column(
-
+        modifier = modifier
+            .fillMaxSize()
+            .background(Color.LightGray),
+        verticalArrangement = Arrangement.Top,
+        horizontalAlignment = Alignment.CenterHorizontally
     )
 
 }

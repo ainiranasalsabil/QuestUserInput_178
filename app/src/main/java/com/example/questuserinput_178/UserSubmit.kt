@@ -42,9 +42,13 @@ fun FormPendaftaranDataDiri(modifier: Modifier = Modifier) {
                 .height(dimensionResource(R.dimen.tinggi_header))
                 .background(Color.Blue),
     contentAlignment = Alignment.Center
-    ){
+    ) {
         Text(
-
+            text = "Formulir Pendaftaran",
+            color = Color.White,
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Center,
+            style = MaterialTheme.typography.headlineSmall
         )
     }
 

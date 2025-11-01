@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
@@ -63,6 +64,10 @@ fun FormPendaftaranDataDiri(modifier: Modifier = Modifier) {
             .fillMaxWidth(0.9f)
             .wrapContentHeight(),
         elevation = CardDefaults.cardElevation(dimensionResource(R.dimen.elevasi_card))
-    )
+    ) {
+        Column(
+            modifier = Modifier.padding(dimensionResource(R.dimen.padding_card)),
+            verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium))
+        )
 
 }

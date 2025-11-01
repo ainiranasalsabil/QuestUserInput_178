@@ -32,6 +32,8 @@ fun FormPendaftaranDataDiri(modifier: Modifier = Modifier) {
             .background(Color.LightGray),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
+    ) Box(
+
     )
 
 }

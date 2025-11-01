@@ -3,4 +3,8 @@
     <dimen name="padding_small">10dp</dimen>
     <dimen name="padding_medium">30dp</dimen>
     <dimen name="padding_tipis">1dp</dimen>
+    <dimen name="padding_tipis1">2dp</dimen>
+    <dimen name="padding_small2">8dp</dimen>
+    <dimen name="padding_medium3">16dp</dimen>
+    <dimen name="padding_large">24dp</dimen>
 </resources>

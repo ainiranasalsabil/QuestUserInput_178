@@ -1,30 +1,10 @@
 package com.example.questuserinput_178
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.selectable
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.ElevatedCard
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.RadioButton
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -41,103 +21,120 @@ fun FormPendaftaranDataDiri(modifier: Modifier = Modifier) {
 
     val gender = listOf("Laki-laki", "Perempuan")
     val status = listOf("Janda", "Lajang", "Duda")
+
+    // Kolom utama
     Column(
         modifier = modifier
             .fillMaxSize()
             .background(Color.LightGray),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
-    ) Box(
+    ) {
+
+        // Header
+        Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(dimensionResource(R.dimen.tinggi_header))
                 .background(Color.Blue),
-    contentAlignment = Alignment.Center
-    ) {
-        Text(
-            text = "Formulir Pendaftaran",
-            color = Color.White,
-            fontWeight = FontWeight.Bold,
-            textAlign = TextAlign.Center,
-            style = MaterialTheme.typography.headlineSmall
-        )
-    }
-
-    Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_header)))
-
-    ElevatedCard(
-        modifier = Modifier
-            .fillMaxWidth(0.9f)
-            .wrapContentHeight(),
-        elevation = CardDefaults.cardElevation(dimensionResource(R.dimen.elevasi_card))
-    ) {
-        Column(
-            modifier = Modifier.padding(dimensionResource(R.dimen.padding_card)),
-            verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium))
+            contentAlignment = Alignment.Center
         ) {
-            OutlinedTextField(
-                value = textNama,
-                singleLine = true,
-                modifier = Modifier.fillMaxWidth(),
-                label = { Text("Nama Lengkap") },
-                onValueChange = { textNama = it }
+            Text(
+                text = "Formulir Pendaftaran",
+                color = Color.White,
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Center,
+                style = MaterialTheme.typography.headlineSmall
             )
-            Text("Jenis Kelamin", fontWeight = FontWeight.SemiBold)
-            Column {
-                gender.forEach { item ->
-                    Row(
-                        modifier = Modifier
-                            .selectable(
+        }
+
+        Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_header)))
+
+        // Kartu utama
+        ElevatedCard(
+            modifier = Modifier
+                .fillMaxWidth(0.9f)
+                .wrapContentHeight(),
+            elevation = CardDefaults.cardElevation(dimensionResource(R.dimen.elevasi_card))
+        ) {
+            Column(
+                modifier = Modifier.padding(dimensionResource(R.dimen.padding_card)),
+                verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium))
+            ) {
+                // Input Nama
+                OutlinedTextField(
+                    value = textNama,
+                    singleLine = true,
+                    modifier = Modifier.fillMaxWidth(),
+                    label = { Text("Nama Lengkap") },
+                    onValueChange = { textNama = it }
+                )
+
+                // Jenis Kelamin
+                Text("Jenis Kelamin", fontWeight = FontWeight.SemiBold)
+                Column {
+                    gender.forEach { item ->
+                        Row(
+                            modifier = Modifier
+                                .selectable(
+                                    selected = textJK == item,
+                                    onClick = { textJK = item }
+                                )
+                                .padding(vertical = dimensionResource(R.dimen.padding_tipis)),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            RadioButton(
                                 selected = textJK == item,
                                 onClick = { textJK = item }
                             )
-                            .padding(vertical = dimensionResource(R.dimen.padding_tipis)),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        RadioButton(
-                            selected = textJK == item,
-                            onClick = { textJK = item }
-                        )
-                        Text(item)
+                            Text(item)
+                        }
                     }
                 }
-            }
-            Text("Status Perkawinan", fontWeight = FontWeight.SemiBold)
-            Column {
-                status.forEach { item ->
-                    Row(
-                        modifier = Modifier
-                            .selectable(
+
+                // Status Perkawinan
+                Text("Status Perkawinan", fontWeight = FontWeight.SemiBold)
+                Column {
+                    status.forEach { item ->
+                        Row(
+                            modifier = Modifier
+                                .selectable(
+                                    selected = textStatus == item,
+                                    onClick = { textStatus = item }
+                                )
+                                .padding(vertical = dimensionResource(R.dimen.padding_tipis)),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            RadioButton(
                                 selected = textStatus == item,
                                 onClick = { textStatus = item }
                             )
-                            .padding(vertical = dimensionResource(R.dimen.padding_tipis)),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        RadioButton(
-                            selected = textStatus == item,
-                            onClick = { textStatus = item }
-                        )
-                        Text(item)
+                            Text(item)
+                        }
                     }
                 }
-            }
-            OutlinedTextField(
-                value = textAlamat,
-                singleLine = true,
-                modifier = Modifier.fillMaxWidth(),
-                label = { Text("Alamat Lengkap") },
-                onValueChange = { textAlamat = it }
-            )
-            Button(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(dimensionResource(R.dimen.tinggi_tombol)),
-                enabled = textNama.isNotEmpty() && textAlamat.isNotEmpty(),
-                onClick = {},
-                colors = ButtonDefaults.buttonColors(containerColor = Color.Blue)
-            ){
-                Text("Submit", color = Color.White)
-            }
 
+                // Input Alamat
+                OutlinedTextField(
+                    value = textAlamat,
+                    singleLine = true,
+                    modifier = Modifier.fillMaxWidth(),
+                    label = { Text("Alamat Lengkap") },
+                    onValueChange = { textAlamat = it }
+                )
+
+                // Tombol Submit
+                Button(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(dimensionResource(R.dimen.tinggi_tombol)),
+                    enabled = textNama.isNotEmpty() && textAlamat.isNotEmpty(),
+                    onClick = {},
+                    colors = ButtonDefaults.buttonColors(containerColor = Color.Blue)
+                ) {
+                    Text("Submit", color = Color.White)
+                }
+            }
+        }
+    }
 }

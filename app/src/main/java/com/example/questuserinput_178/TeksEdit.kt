@@ -77,10 +77,10 @@ fun FormDataDiri(modifier: Modifier){
 
         Divider(
             modifier = Modifier.padding(
-                bottom = dimensionResource(R.dimen.padding_medium),
-                top = dimensionResource(R.dimen.padding_medium)
+                bottom = dimensionResource(R.dimen.padding_medium_alt),
+                top = dimensionResource(R.dimen.padding_medium_alt)
             ),
-            thickness = dimensionResource(R.dimen.padding_tipis),
+            thickness = dimensionResource(R.dimen.padding_tipis_alt),
             color = Color.DarkGray
         )
 
@@ -99,10 +99,10 @@ fun FormDataDiri(modifier: Modifier){
 
         Divider(
             modifier = Modifier.padding(
-                bottom = dimensionResource(R.dimen.padding_medium),
-                top = dimensionResource(R.dimen.padding_medium)
+                bottom = dimensionResource(R.dimen.padding_medium_alt),
+                top = dimensionResource(R.dimen.padding_medium_alt)
             ),
-            thickness = dimensionResource(R.dimen.padding_tipis),
+            thickness = dimensionResource(R.dimen.padding_tipis_alt),
             color = Color.DarkGray
         )
         ElevatedCard(

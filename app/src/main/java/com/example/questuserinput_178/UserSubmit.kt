@@ -8,6 +8,9 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -52,6 +55,14 @@ fun FormPendaftaranDataDiri(modifier: Modifier = Modifier) {
             style = MaterialTheme.typography.headlineSmall
         )
     }
+
     Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_header)))
+
+    ElevatedCard(
+        modifier = Modifier
+            .fillMaxWidth(0.9f)
+            .wrapContentHeight(),
+        elevation = CardDefaults.cardElevation(dimensionResource(R.dimen.elevasi_card))
+    )
 
 }

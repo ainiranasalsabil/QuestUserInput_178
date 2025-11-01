@@ -33,7 +33,11 @@ fun FormPendaftaranDataDiri(modifier: Modifier = Modifier) {
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) Box(
-
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(dimensionResource(R.dimen.tinggi_header))
+                .background(Color.Blue),
+    contentAlignment = Alignment.Center
     )
 
 }

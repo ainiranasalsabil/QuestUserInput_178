@@ -120,5 +120,12 @@ fun FormPendaftaranDataDiri(modifier: Modifier = Modifier) {
                     }
                 }
             }
+            OutlinedTextField(
+                value = textAlamat,
+                singleLine = true,
+                modifier = Modifier.fillMaxWidth(),
+                label = { Text("Alamat Lengkap") },
+                onValueChange = { textAlamat = it }
+            )
 
 }

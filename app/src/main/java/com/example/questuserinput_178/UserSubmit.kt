@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -68,6 +69,13 @@ fun FormPendaftaranDataDiri(modifier: Modifier = Modifier) {
         Column(
             modifier = Modifier.padding(dimensionResource(R.dimen.padding_card)),
             verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium))
-        )
+        ) {
+            OutlinedTextField(
+                value = textNama,
+                singleLine = true,
+                modifier = Modifier.fillMaxWidth(),
+                label = { Text("Nama Lengkap") },
+                onValueChange = { textNama = it }
+            )
 
 }

@@ -105,25 +105,6 @@ fun FormDataDiri(modifier: Modifier){
             thickness = dimensionResource(R.dimen.padding_tipis),
             color = Color.DarkGray
         )
-
-        OutlinedTextField(
-            value = textAlamat,
-            singleLine = true,
-            modifier = Modifier.width(250.dp),
-
-            onValueChange = {
-                textAlamat = it
-            }
-        )
-
-        Divider(
-            modifier = Modifier.padding(
-                bottom = dimensionResource(R.dimen.padding_medium),
-                top = dimensionResource(id = R.dimen.padding_medium)
-            ),
-            thickness = dimensionResource(R.dimen.padding_tipis),
-            color = Color.DarkGray
-        )
         ElevatedCard(
             elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
             colors = CardDefaults.cardColors(containerColor = Color.Black),

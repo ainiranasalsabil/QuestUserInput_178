@@ -136,6 +136,8 @@ fun FormPendaftaranDataDiri(modifier: Modifier = Modifier) {
                 enabled = textNama.isNotEmpty() && textAlamat.isNotEmpty(),
                 onClick = {},
                 colors = ButtonDefaults.buttonColors(containerColor = Color.Blue)
-            )
+            ){
+                Text("Submit", color = Color.White)
+            }
 
 }

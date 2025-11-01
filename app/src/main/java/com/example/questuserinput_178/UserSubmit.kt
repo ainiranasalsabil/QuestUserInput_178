@@ -15,6 +15,6 @@ fun FormPendaftaranDataDiri(modifier: Modifier = Modifier) {
     var textStatus by remember { mutableStateOf("") }
 
     val gender = listOf("Laki-laki", "Perempuan")
-
+    val status = listOf("Janda", "Lajang", "Duda")
 
 }

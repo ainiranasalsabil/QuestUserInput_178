@@ -100,8 +100,25 @@ fun FormPendaftaranDataDiri(modifier: Modifier = Modifier) {
                     }
                 }
             }
-            Text("Status", fontWeight = FontWeight.SemiBold)
-
+            Text("Status Perkawinan", fontWeight = FontWeight.SemiBold)
+            Column {
+                status.forEach { item ->
+                    Row(
+                        modifier = Modifier
+                            .selectable(
+                                selected = textStatus == item,
+                                onClick = { textStatus = item }
+                            )
+                            .padding(vertical = dimensionResource(R.dimen.padding_tipis)),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        RadioButton(
+                            selected = textStatus == item,
+                            onClick = { textStatus = item }
+                        )
+                        Text(item)
+                    }
+                }
             }
 
 }
